@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>update Student details</h1>
+    <a href="{% url 'index1' %}">back</a>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label><input id="name" type="text" name="name" autofocus disabled value="{{data.Name}}"> <br>
+        <label for="Roll_no">Roll_no:</label><input id="Roll_no" type="number"  name="Roll_no" disabled value="{{data.Roll_no}}"> <br>
+        <label for="Phone_no">Phone_no:</label><input id="Phone_no" type="number" name="Phone_no" value="{{data.Phone_no}}" autofocus> <br>
+        <label for="Standard">Standard:</label><input id="Standard" type="text"  name="Standard" value="{{data.Standard}}"> <br>
+        <label for="Tamil">Tamil:</label><input id="Tamil" type="number"  name="Tamil" value="{{data.Tamil}}"> <br>
+        <label for="English">English:</label><input id="English" type="number"  name="English" value="{{data.English}}"> <br>
+        <label for="Maths">Maths:</label><input id="Maths" type="number" name="Maths" value="{{data.Maths}}"> <br>
+        <label for="Science">Science:</label><input id="Science" type="number"  name="Science" value="{{data.Science}}"> <br>
+        <label for="Physics">Physics:</label><input id="Physics" type="number"  name="Physics" value="{{data.Physics}}"> <br>
+        <label for="Chemistry">Chemistry:</label><input id="Chemistry" type="number"  name="Chemistry" value="{{data.Chemistry}}"> <br> <br>
+        <button type="submit">Submited</button>
+        <!-- <button type="submit" value="submit" id="nnn"><a href="{% url 'index1' %}">Submit</a></button> -->
+
+    </form>
+</body>
+</html>

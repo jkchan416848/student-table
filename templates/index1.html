@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+     table td{
+      padding: 10px;
+      font-size: 1.5em;
+    }
+    table thead{
+      font-size: 1.5em;
+    }
+    body{
+      background-image: linear-gradient(to top, rgba(107, 240, 240, 0.61),rgba(238, 238, 94, 0.74));
+    }
+  </style>
+  <body>
+    <h1 style="text-align: center;">Student Details Table</h1>
+    <a href="{% url 'index3' %}" style="text-align: center;">Create</a> <br> <br>
+    <div>
+        <h3>drop down</h3>
+        <select name="" id="drop">
+            <option value="all">all</option>
+            <option value="10" >10</option>
+            <option value="11" >11</option>
+            <option value="12" >12</option>
+        </select>
+    </div>
+    <center><table border="1" style="border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Roll Number</th>
+          <th>Standard</th>
+          <th>Show Details</th>
+          <th>Update</th>
+          <th>Delect</th>
+        </tr>
+      </thead>
+      {% for i in data %}
+      <tbody>
+        <tr>
+          <td>{{i.Name}}</td>
+          <td>{{i.Roll_no}}</td>
+          <td>{{i.Standard}}</td>
+          <td><a href="{% url 'index2' id=i.id %}">Show More</a></td>
+          <td><a href="{% url 'update' id=i.id %}">Update</a></td>
+          <td><a href="{% url 'delect' id=i.id %}" onclick="return confirm('you want to delete the records?')">Delect</a></td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+    </center>
+    <script>
+var drop = document.getElementById("drop")
+var std = document.getElementById("std")
+drop.addEventListener("change",()=>{
+    console.log(drop.value)
+})
+    </script>
+  </body>
+</html>
