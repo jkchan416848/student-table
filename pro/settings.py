@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-2-tu_nt^76qeyz8bo47#&_)4zfdbpt3a#eptn59or8sits2fhv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = []
+ALLOWED_HOSTS = ['student-table-production.up.railway.app','https://student-table-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['student-table-production.up.railway.app','https://student-table-production.up.railway.app']
 
 
 # Application definition
