@@ -20,7 +20,7 @@ from app1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index1/',views.index1_view, name = 'index1'),
+    path('',views.index1_view, name = 'index1'),
     path('index2/<int:id>/',views.index2_view, name='index2'),
     path('index3/',views.index3_view, name='index3'),
     path('update/<int:id>/',views.update_view, name='update'),
