@@ -28,6 +28,7 @@ SECRET_KEY = 'django-insecure-2-tu_nt^76qeyz8bo47#&_)4zfdbpt3a#eptn59or8sits2fhv
 DEBUG = True
 
 ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = []
 
 
 # Application definition
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app1'
+    'app1',
+    'whitenoise.runserver_nostatic', 
 ]
 
 MIDDLEWARE = [
@@ -50,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'pro.urls'
@@ -119,6 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# STATICFILES_STORAGE = 'Whitenoise.storage.CompressedManifestStaticFilesStorages'
+# STATIC_ROOT = BASE_DIR /'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
